@@ -13,7 +13,6 @@ const App = () => {
       const response = await axios.post(url_2, {
         question: inputText
       });
-      console.log("Response from ask:", response);
       setGeneratedText(response.data.answer);
     } catch (error) {
       console.error("Er ging iets mis:", error);
@@ -27,7 +26,6 @@ const App = () => {
       const response = await axios.post(url, {
         text: inputText
       });
-      console.log("Response from ask:", response);
       setGeneratedText(response.data[0].generated_text);
     } catch (error) {
       console.error("Er ging iets mis:", error);
@@ -36,16 +34,18 @@ const App = () => {
 
   return (
     <div>
-      <h1>Text Generation via AWS bedrock and huggingface</h1>
+      <h1>Text generation with AWS bedrock and huggingface</h1>
       <textarea
         value={inputText}
         onChange={e => setInputText(e.target.value)}
         placeholder="Typ je vraag hier..."
       />
-      <button onClick={handleGenerate}>Genereer Tekst</button>
-      <button onClick={handleGenerateHuggingface}>
-        Genereer Tekst with python and huggingface
-      </button>
+      <div className="container-buttons">
+        <button onClick={handleGenerate}>AWS bedrock </button>
+        <button onClick={handleGenerateHuggingface}>
+          huggingface and python
+        </button>
+      </div>
       <p>{generatedText}</p>
     </div>
   );

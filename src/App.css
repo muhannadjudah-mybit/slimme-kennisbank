@@ -35,10 +35,17 @@ textarea:focus {
   outline: none;
 }
 
+.container-buttons{
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
 /* Stijl voor de knop */
 button {
-  width: 100%;
+  width: 280px;
   padding: 10px;
+  margin: 5px;
   font-size: 18px;
   background-color: #007bff;
   color: white;
@@ -56,10 +63,10 @@ button:hover {
 p {
   margin-top: 20px;
   font-size: 16px;
-  color: #555;
+  color: white;
   white-space: pre-wrap;
   word-wrap: break-word;
-  background-color: #f4f4f4;
+  background-color: black;
   padding: 15px;
   border-radius: 5px;
   border: 1px solid #ddd;
